@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", ()=>
     addToDo()//Invoking the function that will handle the form submission
 })
 
+//Function to fetch the data from the JSON server
 const fetchToDos= ()=>
 {
     fetch("http://localhost:3000/toDos")
@@ -27,6 +28,8 @@ const renderToDos=(id, title, completed)=>
     //Creating the elements to be rendered to the DOM
     let toDoItem= document.createElement("li")
 
+    //Setting the innerHTML based on when the completed attribute is true or not.
+    //If true, the to do item will be strike through. Else it will appear as normal
     if(completed===true)
     {
         toDoItem.innerHTML=
@@ -113,7 +116,11 @@ const addToDo=()=>
 //Function that adds the data submitted by the user to the server
 const addToDotoJSON=toDoObject=>
 {
-    fetch("http://localhost:3000/toDos", 
+    //Setting the URL
+    const fetchURL="http://localhost:3000/toDos"
+
+    //Specifying the HTTP verb to be used
+    const addConfiguration=
     {
         method: "POST",
         headers: 
@@ -122,14 +129,19 @@ const addToDotoJSON=toDoObject=>
         },
         //Converting the object to a JSON string
         body: JSON.stringify(toDoObject)
-    })
+    }
+
+    //Invoking the function that will handle the POST
+    crudFunction(fetchURL, addConfiguration)
 }
 
 const updatedToDo=(updatedToDoObject, id)=>
 {
+    //Setting the URL
+    const updateURL=`http://127.0.0.1:3000/toDos/${id}`
 
-    //Updating the value of completed based in the ID
-    fetch(`http://127.0.0.1:3000/toDos/${id}`,
+    //Specifying the HTTP verb to be used
+    const updateConfiguration=
     {
         method: "PATCH",
         headers: 
@@ -137,19 +149,34 @@ const updatedToDo=(updatedToDoObject, id)=>
             'Content-type' : 'application/json'
         },
         body: JSON.stringify(updatedToDoObject)
-    })
+    }
+
+    //Invoking the function that will handle the PATCH
+    crudFunction(updateURL, updateConfiguration)
 }
 
 //Declaring a function to handle deleting of the to do tasks
 const deleteToDo=(id)=>
 {
-    //Fetching the data to be deleted using its ID
-    fetch(`http://127.0.0.1:3000/toDos/${id}`, 
+    //Setting the URL
+    const deleteURL=`http://127.0.0.1:3000/toDos/${id}`
+
+    //Specifying the HTTP verb to be used
+    const deleteConfiguration=
     {
         method: "DELETE",
         headers: 
         {
             'Content-type' : 'application/json'
         }
-    })
+    }
+
+    //Invoking the function that will handle the delete
+    crudFunction(deleteURL, deleteConfiguration)
+}
+
+//Creating a function that will be called for various HTTP verb methods. Helps avoid repeating same bit of code
+const crudFunction=(url, configurationObject)=>
+{
+    fetch(url, configurationObject)
 }
