@@ -2,12 +2,12 @@
   "toDos": [
     {
       "title": "eat",
-      "completed": true,
+      "completed": false,
       "id": 2
     },
     {
       "title": "ggcvgsvchs",
-      "completed": true,
+      "completed": false,
       "id": 3
     }
   ]
