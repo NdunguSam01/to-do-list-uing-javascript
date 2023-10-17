@@ -1,0 +1,62 @@
+*
+{
+    padding: 0;
+    margin: 0;
+}
+body
+{
+    background-color:  wheat
+}
+h1
+{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2.5em;
+    padding: 20px;
+    color: green;
+}
+form
+{
+    text-align: center;
+    padding: 20px;
+    border: 1px solid rgba(155, 154, 154, 0.8);
+}
+form input[type=text]
+{
+    padding: 10px;
+    border-radius: 5px;
+}
+form input[type=submit]
+{
+    margin-top: 20px;
+    padding: 14px;
+}
+.toDoItems
+{
+    border: 1px solid rgba(155, 154, 154, 0.8);
+    padding-left: 100px;
+}
+.toDoItems h2
+{
+    text-transform: uppercase;
+    font-size: 2em;
+    padding: 15px 0;
+}
+#to-Do-List li
+{
+    text-transform: capitalize;
+    padding: 10px 0;
+}
+#to-Do-List li .fa
+{
+    font-size: 30px;
+    padding-left: 10px;
+}
+#to-Do-List li .fa-check:hover
+{
+    color: rgb(44, 168, 44);
+}
+#to-Do-List li .fa-trash-o:hover
+{
+    color: red;
+}

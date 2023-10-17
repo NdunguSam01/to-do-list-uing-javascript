@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Using the defer attribute when placing the script file in the head tag tells the browser to skip execution of the script file until the DOM has been loaded-->
+    <script src="./JS/script.js" defer></script>
+    <link rel="stylesheet" href="./CSS/styles.css">
+    <title>To-Do List in JavaScript</title>
+</head>
+<body>
+    <h1>To Do List Application Using JavaScript</h1>
+    <form>
+        <input type="text" name="new-task" id="new-toDo" placeholder="Enter a new task" required><br>
+        <input type="submit" value="Add task">
+    </form>
+
+    <section class="toDoItems">
+        <h2>My Tasks</h2>
+        <ol id="to-Do-List">
+        </ol>
+    </section>
+</body>
+</html>
