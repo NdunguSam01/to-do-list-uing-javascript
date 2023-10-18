@@ -1,24 +1,14 @@
 {
   "toDos": [
     {
-      "title": "clean the car",
-      "completed": false,
-      "id": 1
-    },
-    {
-      "title": "feed the cat",
-      "completed": false,
-      "id": 2
-    },
-    {
-      "title": "close the curtains",
-      "completed": false,
-      "id": 3
-    },
-    {
-      "title": "clean the house",
+      "title": "Lift weights",
       "completed": false,
       "id": 4
+    },
+    {
+      "title": "Do cardio",
+      "completed": false,
+      "id": 5
     }
   ]
 }

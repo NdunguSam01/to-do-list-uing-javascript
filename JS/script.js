@@ -49,9 +49,6 @@ const renderToDos=(id, title, completed)=>
         `
     }
 
-    //Setting the id of the created list item
-    toDoItem.setAttribute("id",id)
-
     //Getting the done and delete buttons
     let doneBtns=toDoItem.querySelectorAll(".fa-check")
     let deleteBtns=toDoItem.querySelectorAll(".fa-trash-o")
