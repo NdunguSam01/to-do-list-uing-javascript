@@ -74,7 +74,7 @@ const renderToDos=(id, title, completed)=>
     {
         deleteBtn.addEventListener("click", ()=>
         {
-             //Passing the ID as parameter to the function that will handle the delete functionality
+            //Passing the ID as parameter to the function that will handle the delete functionality
             deleteToDo(deleteBtn.id)
         }) 
     });
