@@ -108,7 +108,7 @@ const addToDo=()=>
         }
 
         //Invoking the function that will add the new to do task to the JSON server
-        addToDotoJSON(toDoObject)
+        addDataToJSON(toDoObject)
 
         //Resseting the form after submission
         form.reset()
@@ -116,7 +116,7 @@ const addToDo=()=>
 }
 
 //Function that adds the data submitted by the user to the server
-const addToDotoJSON=toDoObject=>
+const addDataToJSON=toDoObject=>
 {
     //Setting the URL
     const fetchURL="http://localhost:3000/toDos"
