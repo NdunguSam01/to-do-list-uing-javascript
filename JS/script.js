@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", ()=>
 {
-    fetchToDos() //Invoking the function responsible for fetching the data from the JSON server
+    fetchToDosFromServer() //Invoking the function responsible for fetching the data from the JSON server
     addToDo()//Invoking the function that will handle the form submission
 })
 
 //Function to fetch the data from the JSON server
-const fetchToDos= ()=>
+const fetchToDosFromServer= ()=>
 {
     fetch("http://localhost:3000/toDos")
         .then(response=> response.json())
@@ -13,8 +13,8 @@ const fetchToDos= ()=>
             {
                 toDos.forEach(toDo => 
                 {
-                    let {id, title, completed} = toDo
-                    renderToDos(id, title, completed)
+                    let {id, title, completed} = toDo //Destructuring the data inside the array
+                    renderToDos(id, title, completed)//Passing the destructured data as arguments to the function that will add the items to the DOM
                 });
             })
 }
@@ -61,10 +61,12 @@ const renderToDos=(id, title, completed)=>
     {
         doneBtn.addEventListener("click",()=>
         {
+            //Creating the object that will be passed in as the body when doing a PATCH request
             let updatedToDoObject=
             {
                 completed: true
             }
+
             //Passing the object and ID as parameters to the function that will handle the update functionality
             updatedToDo(updatedToDoObject, doneBtn.id)
         })
@@ -74,7 +76,7 @@ const renderToDos=(id, title, completed)=>
     {
         deleteBtn.addEventListener("click", ()=>
         {
-            //Passing the ID as parameter to the function that will handle the delete functionality
+            //Passing the ID as parameter to the function that will handle the delete functionality. The ID will be used to delete that specific item
             deleteToDo(deleteBtn.id)
         }) 
     });
